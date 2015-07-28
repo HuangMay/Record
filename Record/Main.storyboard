@@ -44,7 +44,6 @@
                                 </state>
                                 <connections>
                                     <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xoe-rD-62w"/>
-                                    <segue destination="Tp9-Uh-Jt9" kind="show" id="49R-Fc-h7R"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,6 +62,7 @@
                         <outlet property="audioButton" destination="IpR-Q2-17m" id="Zxg-4w-KUN"/>
                         <outlet property="recordInProgress" destination="Wn8-NH-IlW" id="4fn-22-3Ts"/>
                         <outlet property="stopButton" destination="GOp-oy-6yr" id="axx-Mj-dPg"/>
+                        <segue destination="Tp9-Uh-Jt9" kind="show" identifier="stopRecording" id="p0o-IS-3D4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -100,7 +100,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7s-f5-ict">
-                                <rect key="frame" x="277" y="362" width="50" height="50"/>
+                                <rect key="frame" x="277" y="398" width="50" height="50"/>
                                 <state key="normal" image="stopAudio">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -108,16 +108,28 @@
                                     <action selector="stopPlaying:" destination="Tp9-Uh-Jt9" eventType="touchUpInside" id="lA3-4q-0vg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeF-th-bMV">
+                                <rect key="frame" x="194" y="271" width="100" height="100"/>
+                                <state key="normal" image="chipmunk">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playChipmunkAudio:" destination="Tp9-Uh-Jt9" eventType="touchUpInside" id="IDU-9V-0Rr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zeF-th-bMV" firstAttribute="top" secondItem="RAE-X6-ca5" secondAttribute="bottom" constant="8" id="8BJ-ka-tqg"/>
                             <constraint firstItem="RAE-X6-ca5" firstAttribute="top" secondItem="SKO-bp-ifQ" secondAttribute="bottom" constant="99" id="LF8-xB-0lT"/>
                             <constraint firstItem="xPo-Ti-wEB" firstAttribute="leading" secondItem="RAE-X6-ca5" secondAttribute="trailing" constant="14" id="Qhp-57-yZm"/>
                             <constraint firstItem="xPo-Ti-wEB" firstAttribute="top" secondItem="SKO-bp-ifQ" secondAttribute="bottom" constant="99" id="Rqd-mR-OeQ"/>
-                            <constraint firstItem="X7s-f5-ict" firstAttribute="top" secondItem="xPo-Ti-wEB" secondAttribute="bottom" constant="99" id="ch2-z2-uvr"/>
+                            <constraint firstItem="zeF-th-bMV" firstAttribute="centerX" secondItem="RAE-X6-ca5" secondAttribute="centerX" id="SPu-Qb-uNe"/>
                             <constraint firstAttribute="centerX" secondItem="X7s-f5-ict" secondAttribute="centerX" constant="-2" id="k3b-iI-aNn"/>
+                            <constraint firstItem="X7s-f5-ict" firstAttribute="top" secondItem="xPo-Ti-wEB" secondAttribute="bottom" constant="135" id="l7L-7J-2YD"/>
                             <constraint firstAttribute="centerX" secondItem="xPo-Ti-wEB" secondAttribute="centerX" constant="-58" id="wDA-X0-p5s"/>
                             <constraint firstAttribute="centerX" secondItem="RAE-X6-ca5" secondAttribute="centerX" constant="56" id="x5p-5O-D0F"/>
+                            <constraint firstItem="zeF-th-bMV" firstAttribute="top" secondItem="SKO-bp-ifQ" secondAttribute="bottom" constant="207" id="xSO-im-I6X"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -145,6 +157,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chipmunk" width="100" height="100"/>
         <image name="fast" width="100" height="100"/>
         <image name="microphone" width="128" height="128"/>
         <image name="slow" width="100" height="100"/>

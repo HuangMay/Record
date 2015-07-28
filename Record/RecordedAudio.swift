@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  RecordedAudio.swift
 //  Record
 //
 //  Created by 傑夫 on 2015/7/27.
@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+class RecordedAudio: NSObject{
+    var filePathUrl: NSURL!
+    var title: String!
+}
